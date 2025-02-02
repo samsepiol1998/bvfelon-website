@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A bold and aggressive site featuring BVFELON.">
+    <title>BVFELON</title>
+    <!-- Link to Google Fonts for an aggressive font (optional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <style>
+        /* Reset default margin and padding */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: red;
+            font-family: 'Black Ops One', 'Impact', sans-serif; /* Aggressive font with fallback */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Move content to the top */
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+
+        h1 {
+            font-size: 72px;
+            text-transform: uppercase;
+            margin: 20px 0; /* Add some margin at the top */
+            text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.5); /* Add a subtle text shadow */
+            opacity: 0;
+            animation: introAnim 2s forwards; /* Animation for intro */
+        }
+
+        /* Animation for the intro transition */
+        @keyframes introAnim {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .content {
+            font-size: 20px;
+            text-align: left;
+            max-width: 800px;
+            margin-top: 40px;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeIn 2s 2s forwards; /* Fade-in effect after intro */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Russian Flag Styles */
+        .flag-container {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .flag {
+            width: 100%;
+            max-width: 600px; /* Make the flag image responsive */
+            height: auto;
+            border: 3px solid red;
+        }
+
+        .developer-info {
+            margin-top: 20px;
+            color: white;
+            font-size: 18px;
+        }
+
+        .instagram-link {
+            color: red;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Audio for the intro sound effect -->
+    <audio id="introSound" src="intro-sound.mp3" preload="auto"></audio>
+
+    <!-- Audio for the outro sound effect -->
+    <audio id="outroSound" src="outro-sound.mp3" preload="auto"></audio>
+
+    <!-- The main title -->
+    <h1 id="title">BVFELON</h1>
+
+    <!-- Content with the details about Russian Fighter Jets -->
+    <div class="content">
+        <h2>New Russian Fighter Jets</h2>
+        <ul>
+            <li><strong>Sukhoi Su-57 (Felon)</strong><br>
+                Russia's advanced fifth-generation stealth fighter, designed for air superiority, ground attack, and reconnaissance missions. It features supercruise, advanced avionics, and a wide range of weapon systems.</li>
+            <li><strong>Su-75 Checkmate</strong><br>
+                A light, single-engine stealth fighter designed for affordability in the global market. Equipped with onboard AI, high-efficiency engines, and a versatile weapons suite.</li>
+            <li><strong>MiG-35</strong><br>
+                A multirole, fourth-generation fighter optimized for both air-to-air and air-to-ground missions. It incorporates upgraded radar, avionics, and a highly maneuverable airframe.</li>
+            <li><strong>Su-30SM</strong><br>
+                A multirole fighter aircraft designed for air-to-air and air-to-ground missions. Its versatility and high-performance engines make it a crucial asset in Russia’s defense strategy.</li>
+            <li><strong>MiG-29</strong><br>
+                A classic fourth-generation fighter that continues to serve in the Russian Air Force. Known for its agility and versatility, it is used for both air superiority and ground attack roles.</li>
+            <li><strong>Su-35</strong><br>
+                An advanced, highly maneuverable multirole fighter with long-range capabilities. The Su-35 boasts advanced avionics, weapons systems, and high speed, making it a formidable asset for the Russian military.</li>
+        </ul>
+    </div>
+
+    <!-- Russian Flag Section -->
+    <div class="flag-container">
+        <img class="flag" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" alt="Russian Flag">
+    </div>
+
+    <!-- Developer Information -->
+    <div class="developer-info">
+        <p>Developed by <a class="instagram-link" href="https://www.instagram.com/bvfelon/" target="_blank">@bvfelon</a></p>
+    </div>
+
+    <script>
+        // Play the intro sound effect when the page loads
+        window.onload = () => {
+            const introSound = document.getElementById('introSound');
+            introSound.play(); // Play the intro sound effect
+        };
+
+        // Play the outro sound effect after the animation completes (2 seconds)
+        document.getElementById('title').addEventListener('animationend', () => {
+            const outroSound = document.getElementById('outroSound');
+            outroSound.play(); // Play the outro sound effect
+        });
+    </script>
+</body>
+</html>
